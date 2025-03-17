@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <head>
         <meta charset="utf-8">
         <!-- Optimize code for mobile devices first -->
@@ -22,11 +22,11 @@
         <!-- Navegation bar starts -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand text-capitalize" href="index.html">Cesar PS</a>
-            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -66,25 +66,25 @@
                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
-            <div class="row my-0">
-                <p class="d-inline-flex gap-1">
-                  <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="Music">Photography</button>
-                  <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="Photography">Music</button>
-                  <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="Photography">Literature</button>
-                  <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="Photography">Poetry</button>
-                </p>
-                    <div class="collapse multi-collapse" id="Photography">
-                      <div class="card card-body">
-                        Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                      </div>
-                    </div>
-                    <div class="collapse multi-collapse" id="Music">
-                      <div class="card card-body">
-                        Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                      </div>
-                    </div>
-                </div> 
+            <div class="row my-0 gap-1">
+                <button class="col btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="Photography">Music</button>
+                <button class="col btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="Photography">Literature</button>
+                <button class="col btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="Photography">Poetry</button>
+                <button class="col btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="Music">Photography</button>
             </div>
+            <div class="row my-0">
+                <div class="collapse multi-collapse" id="Photography">
+                    <div class="card card-body">
+                        Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                    </div>
+                </div>
+                <div class="collapse multi-collapse" id="Music">
+                    <div class="card card-body">
+                        Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
         <!-- Container end-->
 
@@ -101,8 +101,8 @@
         <script type="text/javascript">
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                            return new bootstrap.Tooltip(tooltipTriggerEl)
-                        })
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
         </script>
 
     </body>
