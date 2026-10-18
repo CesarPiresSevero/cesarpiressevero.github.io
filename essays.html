@@ -13,6 +13,13 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <!-- MathJax for the mathematical expressions in The Pond -->
+        <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <style>
+.pond-essay { max-width: 850px; line-height: 1.85; }
+.pond-essay p { margin-bottom: 1.3rem; }
+.pond-equation { overflow-x: auto; padding: 1rem 0; text-align: center; }
+        </style>
         <!-- Website title -->
         <title>Cesar PS</title>
     </head>
@@ -60,6 +67,64 @@
                     <h1 class="display-5">Essays</h1>
                     <hr class="w-25 mx-auto" />
                 </div>
+                <!-- Start of essay: The Pond -->
+                <h2>The pond</h2>
+                <small><p class="text-muted">10/17/2026</p></small>
+                <div class="collapse" id="pond">
+                    <article class="pond-essay">
+                        <p>The water cycle consists of mainly 3 processes: evaporation, condensation and
+                        precipitation. Evaporation happens when water in liquid state transitions to vapor state
+                        due to factors such as temperature. Condensation happens when water vapor cools to
+                        its dew point and transitions into liquid water. This is due to factors such as air pressure
+                        and humidity. Finally, the release of condensed vapor back to Earth is called
+                        precipitation</p>
+                        <p>The world average precipitation is around 1,000mm yearly. This is extremely
+                        unevenly distributed throughout the globe. Some of the driest regions could have as low
+                        as 18mm and the wettest as high as 3,200mm yearly precipitation. Factors such as
+                        latitude, proximity to water, topography and wind patterns contribute to this disparity.
+                        There is no single season with the highest precipitation worldwide. In Mediterranean
+                        climates, rainfall is often concentrated in winter, while monsoon regions typically
+                        experience their heaviest rainfall during summer.</p>
+                        <p>A bright sunny late summer day warms up a pond located in a delightful Asian
+                        garden. A faint mist can be seen slowly drifting over the pond. As a couple of hours
+                        pass by, fluffy white clouds show up. Just before sunset, a chilly eastbound wind starts
+                        gathering the clouds together. The charming maple trees sway with the wind, shedding
+                        the first leaves of the season. The clouds are now a mix of bright and dark grey, moving
+                        ever so slightly, occasionally letting sunlight through. Distant thunder can be heard. A
+                        sudden downpour begins. Pouring rain on the pond’s surface creates ripples.</p>
+                        <p>The kinetic energy of the raindrop is partially transferred to the water surface,
+                        creating oscillating disturbances that propagate outward in expanding concentric circles.
+                        The disturbance at a fixed point can be approximated by:</p>
+                        <div class="pond-equation">\[\eta(t)=Ae^{-\gamma t}\cos(\omega t)\]</div>
+                        <ul><li>\(\eta(t)\) = Disturbance amplitude at time \(t\)</li><li>\(A\) = Initial amplitude of the disturbance</li><li>\(e\) = Euler's number, approximately 2.71828</li><li>\(\gamma\) = Disturbance damping coefficient</li><li>\(t\) = Time elapsed</li><li>\(\omega\) = Angular frequency of the surface oscillations</li><li>\(\cos\) = Cosine function</li></ul>
+                        <p>The initial disturbance amplitude will depend on the kinetic energy that the
+                        raindrop had when landed, which is dictated by its size and speed. The model above
+                        represents a damped oscillation with an exponentially decaying amplitude envelope.
+                        This means that as time passes, the disturbance amplitude is reduced. When ripples
+                        collide, their amplitudes can reinforce or cancel each other temporarily. Viscosity, which
+                        varies with temperature, contributes to the damping coefficient. Shorter-wavelength ripples, which generally have higher frequencies, tend to dissipate faster than longer
+                        ones. The disturbance approaches zero as time approaches infinity:</p>
+                        <div class="pond-equation">\[\lim_{t\to\infty}\eta(t)=0\]</div>
+                        <p>Although the disturbance approaches zero as time approaches infinity, its integral
+                        over time does not necessarily vanish:</p>
+                        <div class="pond-equation">\[\int_0^\infty\eta(t)\,dt=\frac{A\gamma}{\gamma^2+\omega^2}\ne0\]</div>
+                        <p>The positive and negative oscillations partially cancel each other, but their sum
+                        remains finite and, for positive damping, nonzero. The result is that the disturbance
+                        never really disappears, it becomes indistinguishable from the rest. Even then, its
+                        oscillations have left a nonzero mathematical imprint.</p>
+                        <p>For an average raindrop size, about 20,000 raindrops fall per square meter for
+                        each millimeter of rain. A heavy rainfall totaling around 50mm can contain 1 million
+                        raindrops per square meter. At a rainfall intensity of 5mm per hour, this would amount to
+                        approximately 3,000 raindrops striking a 100-square-meter pond every second.</p>
+                        <p>The rain stopped. A few thin white clouds now move swiftly through the
+                        multihued blue sky. The sun is now partially covered by snow-capped mountains.
+                        Golden rays scatter through the garden. The pond is now calm, with the occasional koi
+                        fish jumping out of the water to show its beautiful red and white colors. Under a pagoda
+                        dimly lit by traditional paper lamps, one observes. It is truly an amazing sight to behold.</p>
+                </div>
+                <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#pond" aria-expanded="false" aria-controls="pond">Read essay</button>
+                <!-- End of essay -->
+                <br> <br> <br>
                 <!-- Start of essay -->
                 <h2> No crime and no punishment</h2>
                 <small><p class="text-muted">07/18/2026</p></small>
@@ -183,6 +248,11 @@
         <!-- Option 1: Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+        <script>
+            document.getElementById('pond').addEventListener('shown.bs.collapse', function () {
+                if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([this]);
+            });
+        </script>
         <script type="text/javascript">
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
